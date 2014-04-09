@@ -4,23 +4,17 @@
 ## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
-        m <- NULL
-        set <- function(y) {
-                x <<- y
-                m <<- NULL
-        }
-        get <- function() x
-        setmean <- function(mean) m <<- mean
-        getmean <- function() m
-        list(set = set, get = get,
-             setmean = setmean,
-             getmean = getmean) }
-
+        return x }
 
 ## Write a short comment describing this function
-## Totally cannot understand the use of these functions as
-##   it unable print a matrix to proof system.time() faster than apply matrix() and solve()
+
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
         solve(x) }
+
+v = c(1, 3, 2, 4)
+m = matrix(v, 2)
+myi <- makeCacheMatrix(m)
+invm <- cacheSolve(myi)
+invm
